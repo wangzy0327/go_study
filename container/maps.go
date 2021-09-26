@@ -54,3 +54,35 @@ func mapsFunc() {
 	fmt.Printf("%q,%v \n",name,ok)
 	//"",false
 }
+
+func lengthOfNonRepeatingSubStr(s string) int{
+	record := make(map[byte]int)
+	start := 0
+	maxLen := 0
+	for i,ch := range []byte(s){
+		if ind,ok := record[ch];ok && ind >= start{
+			start = ind + 1
+		}
+		if maxLen < (i - start + 1 ){
+			maxLen = (i - start + 1)
+		}
+		record[ch] = i
+	}
+	return maxLen
+}
+
+func lengthOfNonRepeatingSubStrForIntel(s string) int{
+	record := make(map[rune]int)
+	start := 0
+	maxLen := 0
+	for i,ch := range []rune(s){
+		if ind,ok := record[ch];ok && ind >= start{
+			start = ind + 1
+		}
+		if maxLen < (i - start + 1 ){
+			maxLen = (i - start + 1)
+		}
+		record[ch] = i
+	}
+	return maxLen
+}
