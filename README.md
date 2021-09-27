@@ -38,3 +38,8 @@ golang 切片的结构
 - go get 获取第三方库（设置国内代理）
 - go install产生pkg文件和可执行文件
 - go run直接编译运行
+
+#### golang接口duck typing 组合
+
+[示例](retriever/main.go)
+
